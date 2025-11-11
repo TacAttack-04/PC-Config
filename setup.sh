@@ -23,4 +23,4 @@ EOF
 pacman -U --noconfirm /tmp/yay-bin/yay-bin-*.pkg.tar.zst && \
 rm -rf /tmp/yay-bin && \
 
-su - $SUDO_USER -c "yay -S --noconfirm --mflags '--skippgpcheck' steam spotify curseforge-bin minecraft-launcher"
+su - $SUDO_USER -c "yay -S --noconfirm --mflags steam curseforge-bin minecraft-launcher"
