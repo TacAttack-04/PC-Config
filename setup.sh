@@ -6,18 +6,22 @@ pacman -S --noconfirm \
    nano \
    tailscale \
    micro \
-   gParted \
+   gparted \
    btop \
    htop \
-   firefox
-sed -i '/^\#\[multilib\]/,/^\#Include/ s/^\#//' /etc/pacman.conf
-pacman -Syu --noconfirm
-git clone https://aur.archlinux.org/paru.git
+   firefox \
+   discord && \
+sed -i '/^\#\[multilib\]/,/^\#Include/ s/^\#//' /etc/pacman.conf && \
+pacman -Sy --noconfirm && \
+git clone https://aur.archlinux.org/paru.git && \
+
+
+su - $SUDO_USER -c "
 cd paru
-print f '1\y\y' | makepkg -si
-paru yay-bin --noconfirm
-print f '1\1\y' | yay steam
-print f '1\a\n\y\y\y' | yay spotify
-print f '1\a\n\y\y\y' | yay curseforge-bin
-print f '1\a\n\y' | yay minecraft-launcher
-pacman -S discord
+makepkg -si --noconfirm
+paru -S yay-bin --noconfirm
+yay steam
+yay spotify
+yay curseforge-bin
+yay minecraft-launcher
+"
