@@ -16,10 +16,12 @@ pacman -Sy --noconfirm && \
 git clone https://aur.archlinux.org/paru.git && \
 
 
-su - $SUDO_USER -c "
+su - $SUDO_USER << 'EOF'
 cd /tmp
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
-paru -S --noconfirm steam spotify curseforge-bin minecraft-launcher
-"
+EOF
+
+# Install AUR packages as user (will use cached sudo from script launch)
+su - $SUDO_USER -c "paru -S --noconfirm steam spotify curseforge-bin minecraft-launcher"
