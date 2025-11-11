@@ -17,11 +17,9 @@ git clone https://aur.archlinux.org/paru.git && \
 
 
 su - $SUDO_USER -c "
+cd /tmp
+git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
-paru -S yay-bin --noconfirm
-yay steam
-yay spotify
-yay curseforge-bin
-yay minecraft-launcher
+paru -S --noconfirm steam spotify curseforge-bin minecraft-launcher
 "
