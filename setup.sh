@@ -23,5 +23,4 @@ cd paru
 makepkg -si --noconfirm
 EOF
 
-# Install AUR packages as user (will use cached sudo from script launch)
-su - $SUDO_USER -c "paru -S --noconfirm steam spotify curseforge-bin minecraft-launcher"
+paru -S --noconfirm steam spotify curseforge-bin minecraft-launcher
