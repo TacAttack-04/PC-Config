@@ -22,5 +22,4 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
 EOF
-
-paru -S --noconfirm steam spotify curseforge-bin minecraft-launcher
+su - $SUDO_USER -c "paru -S --noconfirm steam spotify curseforge-bin minecraft-launcher"
